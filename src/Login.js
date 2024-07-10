@@ -13,7 +13,7 @@ function Login() {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Already have an account</h2>
       <form onSubmit={handleLogin}>
         <input
           type="text"
