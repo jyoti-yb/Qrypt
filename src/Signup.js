@@ -7,13 +7,13 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Add your sign-up logic here
+    // sign-up logic here
     alert('Sign-up form submitted');
   };
 
   return (
     <div className="signup-container">
-      <h2>Sign Up for Cryptify Chat</h2>
+      <h2>Sign Up to create a new account</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Username:</label>
