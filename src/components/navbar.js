@@ -47,7 +47,7 @@ const Navbar = () => {
             </li>
             <li className='nav-item'>
                 <Link to='/aboutus' className='nav-links' onClick={closeMobileMenu}>
-                AboutUs
+                About Us
                 </Link>
             </li>
             <li className='nav-item'>

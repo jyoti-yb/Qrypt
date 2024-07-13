@@ -40,14 +40,14 @@ const LoginRegister = () => {
                     <button type="submit">Login</button>
 
                     <div className="register-link">
-                        <p>Don't have an account?<span onClick={registerLink}> SignUp</span></p>
+                        <p>Don't have an account?<span onClick={registerLink}> Sign up</span></p>
                     </div>
                 </form>
             </div>
 
             <div className="form-box register">
                 <form action="">
-                    <h1>Sign-Up</h1>
+                    <h1>Sign Up</h1>
                     <div className="input-box">
                         <input type="text" placeholder='Email' required />
                         <BsEnvelopeAtFill className='icon'/>
@@ -70,7 +70,7 @@ const LoginRegister = () => {
 
                     </div>
 
-                    <button type="submit">SignUp</button>
+                    <button type="submit">Sign up</button>
 
                     <div className="register-link">
                         <p>Already have an account?<span onClick={loginLink}> Login.</span></p>

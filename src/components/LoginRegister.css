@@ -86,6 +86,7 @@ form .remember-forgot {
     justify-content: space-between;
     font-size: 14.5px;
     margin: 0 15px;
+    cursor: pointer;
 }
 
 .remember-forgot label input {
@@ -120,6 +121,7 @@ form .register-link {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
+    cursor: pointer;
 }
 
 .register-link p a {
