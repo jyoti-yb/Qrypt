@@ -26,7 +26,6 @@
   
   
   .sign-up {
-    background-image: url('/Images/temporary1.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,5 +37,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: -1;
+  }
 
   }
