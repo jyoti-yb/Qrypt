@@ -16,12 +16,18 @@
   }
   
   .aboutus {
-    background-image: url('/Images/pexels-alxs-919734.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
     font-size: 100px;
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: -1;
+  }
   }
   
   
