@@ -1,0 +1,10 @@
+*Instructions to run the app*
+
+-> open the backend and frontend in two differnt terminals.
+[hint: please use 'cd backend' and'cd frontend']
+
+-> go to the chrome and type in this url : http://localhost:3000
+
+And ITS DONE!
+You can easily communicate and exchange real time messeages in a secured medium now.
+
