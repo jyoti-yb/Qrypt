@@ -1,0 +1,132 @@
+/* frontend/src/App.css */
+body {
+  margin: 30px;
+  padding-bottom: 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fcfaf9;
+}
+
+small {
+  font-size: x-small;
+}
+
+#welcome-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+#welcome-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#welcome-page input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#welcome-page button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#welcome-page button:active {
+  background-color: lightgray;
+}
+
+#banner {
+  background-color: black;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#form {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.25rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 3rem;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+#input {
+  border: none;
+  padding: 0 1rem;
+  flex-grow: 1;
+  border-radius: 2rem;
+  margin: 0.25rem;
+}
+
+#input:focus {
+  outline: none;
+}
+
+#form>button {
+  background: greenyellow;
+  border: none;
+  padding: 0 1rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  outline: none;
+  color: black;
+  font-weight: 900;
+}
+
+#form>button:active {
+  background: yellow;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.message {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 80%;
+}
+
+.message.received {
+  background-color: #333333;
+  margin-left: 0.5rem;
+  margin-right: auto;
+  text-align: left;
+  color: white;
+}
+
+.message.sent {
+  background-color: #72e7d9;
+  margin-right: 0.1rem;
+  margin-left: auto;
+  text-align: right;
+}
+
+.message.received p {
+  margin: 0;
+}
+
+.message.sent p {
+  margin: 0;
+}
+
+.username {
+  font-weight: bold;
+  color: red;
+}
