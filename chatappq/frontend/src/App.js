@@ -1,6 +1,5 @@
-// frontend/src/App.js
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import Navbar from './components/navbar';
 import WelcomePage from './components/WelcomePage';
@@ -46,10 +45,6 @@ function App() {
     setUsername(username);
   };
 
-  if (!username) {
-    return <WelcomePage onSubmitUsername={handleUsernameSubmit} />;
-  }
-
   return (
     <Router>
       <Navbar />
@@ -62,6 +57,16 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/welcome" element={<WelcomePage onSubmitUsername={handleUsernameSubmit} />} />
+          <Route
+            path="/"
+            element={
+              !username ? (
+                <Navigate to="/welcome" />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
         </Routes>
         <ul id="messages">
           {messages.map((msg, index) => (
