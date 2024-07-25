@@ -48,7 +48,6 @@ io.on('connection', (socket) => {
     let messageStr = typeof message === 'string' ? message : JSON.stringify(message);
 
     const cipher = crypto.createCipheriv('aes-256-cbc', ss1, iv);
-
     let encrypted = cipher.update(messageStr, 'utf8', 'base64');
     encrypted += cipher.final('base64');
     console.log('Encrypted:', encrypted);
@@ -59,7 +58,7 @@ io.on('connection', (socket) => {
     let decrypted = decryptedCipher.update(encrypted, 'base64', 'utf8');
     decrypted += decryptedCipher.final('utf8');
 
-    io.emit('chat message', { username: username, decrypted: decrypted });
+    io.emit('chat message', decrypted);
   });
 
   socket.on('disconnect', () => {
