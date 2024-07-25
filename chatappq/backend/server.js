@@ -43,9 +43,13 @@ io.on('connection', (socket) => {
 
   socket.on('chat message', (message) => {
     const username = socket.username;
+
+    // Convert message to string if it's an object
+    let messageStr = typeof message === 'string' ? message : JSON.stringify(message);
+
     const cipher = crypto.createCipheriv('aes-256-cbc', ss1, iv);
 
-    let encrypted = cipher.update(message, 'utf8', 'base64');
+    let encrypted = cipher.update(messageStr, 'utf8', 'base64');
     encrypted += cipher.final('base64');
     console.log('Encrypted:', encrypted);
 
