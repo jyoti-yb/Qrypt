@@ -42,7 +42,7 @@ function Chat() {
   const handleSubmitMessage = (e) => {
     e.preventDefault();
     if (input.trim()) {
-      socket.emit('chat message', { username, text: input });
+      socket.emit('chat message', input);
       setInput('');
     }
   };
@@ -57,7 +57,8 @@ function Chat() {
         {messages.map((msg, index) => (
           <li key={index}>
             <div className={`message ${msg.username === username ? 'sent' : 'received'}`}>
-              <p><span className="username">{msg.username}</span>: {msg.text}</p>
+              <p><span className="username">{username}</span></p>
+              <p>{msg}</p>
               <span className="timestamp"><small>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</small></span>
             </div>
           </li>
