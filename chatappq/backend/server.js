@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // Allow requests from this origin
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"]
   }
 });
@@ -17,12 +17,12 @@ const port = process.env.PORT || 8080;
 
 app.use(cors());
 
-// To generate a public and private key pair (pk, sk) for Kyber
+// Generate public and private key pair (pk, sk) for Kyber
 let pk_sk = kyber.KeyGen768();
 let pk = pk_sk[0];
 let sk = pk_sk[1];
 
-// To generate a random 256-bit symmetric key (ss) and its encapsulation (c)
+// Generate a random 256-bit symmetric key (ss) and its encapsulation (c)
 let c_ss = kyber.Encrypt768(pk);
 let c = c_ss[0];
 let ss1 = c_ss[1];
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('A user connected');
 
   socket.on('new user', (username) => {
     console.log(`User ${username} connected`);
@@ -42,30 +42,31 @@ io.on('connection', (socket) => {
   });
 
   socket.on('chat message', (message) => {
-    const username = socket.username;
+    const { username, text } = message; // Expecting message to be an object with username and text
 
-    // Convert message to string if it's an object
-    let messageStr = typeof message === 'string' ? message : JSON.stringify(message);
+    // Convert message text to string
+    let messageStr = typeof text === 'string' ? text : JSON.stringify(text);
 
+    // Encrypt the message
     const cipher = crypto.createCipheriv('aes-256-cbc', ss1, iv);
     let encrypted = cipher.update(messageStr, 'utf8', 'base64');
     encrypted += cipher.final('base64');
-    console.log('Encrypted:', encrypted);
 
+    // Decrypt the message to demonstrate the encryption process (for testing)
     let ss2 = kyber.Decrypt768(c, sk);
+    const decipher = crypto.createDecipheriv('aes-256-cbc', ss2, iv);
+    let decrypted = decipher.update(encrypted, 'base64', 'utf8');
+    decrypted += decipher.final('utf8');
 
-    const decryptedCipher = crypto.createDecipheriv('aes-256-cbc', ss2, iv);
-    let decrypted = decryptedCipher.update(encrypted, 'base64', 'utf8');
-    decrypted += decryptedCipher.final('utf8');
-
-    io.emit('chat message', decrypted);
+    // Emit the decrypted message with username
+    io.emit('chat message', { username, text: decrypted });
   });
 
   socket.on('disconnect', () => {
-    console.log('user disconnected');
+    console.log('User disconnected');
   });
 });
 
 server.listen(port, () => {
-  console.log(`listening on *:${port}`);
+  console.log(`Listening on *:${port}`);
 });
