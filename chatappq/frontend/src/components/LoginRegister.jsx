@@ -3,7 +3,6 @@ import './LoginRegister.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { BsEnvelopeAtFill } from "react-icons/bs";
-
 import { auth, provider } from './firebase';
 import { signInWithPopup } from "firebase/auth";
 
@@ -37,7 +36,6 @@ const LoginRegister = () => {
                         <div className="forgot-password">
                             <p>Forgot password?</p>
                         </div>
-                        { /*<button type="button" className="forgot-password">Forgot password?</button> */}
                     </div>
 
                     <button type="submit">Login</button>
@@ -65,12 +63,6 @@ const LoginRegister = () => {
                     </div>
                     <div className="remember-forgot">
                     <label><input type="checkbox" />I agree to the terms & conditions.</label>
-                    {
-  /*
-    <button type="button" className="terms-link">Terms & Conditions</button>
-  */
-}
-
                     </div>
 
                     <button type="submit">Sign up</button>

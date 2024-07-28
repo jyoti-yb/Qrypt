@@ -7,29 +7,6 @@
   width: 95%; /* Ensure the box width is set */
 }
 
-.aboutus_box_hero {
-  margin-left: 5rem;
-  margin-bottom: 10rem;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  align-items: center;
-  gap: 3rem;
-}
-
-.aboutus_box_hero_left h1 {
-  margin-bottom: 2rem;
-  font-size: 4rem;
-  line-height: 1; /* Correct line height */
-}
-
-.aboutus_box_hero_left p {
-  margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
 .aboutus_box_title {
   margin-top: 75rem;
 }
@@ -55,6 +32,29 @@
   width: 95%;
   text-align: center;
   margin: 0 auto; /* Center the text */
+}
+
+.aboutus_box_hero {
+  margin-left: 5rem;
+  margin-bottom: 10rem;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.aboutus_box_hero_left h1 {
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  line-height: 1; /* Correct line height */
+}
+
+.aboutus_box_hero_left p {
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 .aboutus_box_founders {
