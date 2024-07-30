@@ -15,21 +15,20 @@ function Chat() {
   useEffect(() => {
     const user = auth.currentUser;
     if (user) {
-      const emailName = user.email.split('@')[0]; // Get username from email
+      const emailName = user.email.split('@')[0];
       setUsername(emailName);
       socket.emit('new user', emailName);
-
-      // Listen for incoming messages
-      socket.on('chat message', (msg) => {
-        setMessages((prevMessages) => [...prevMessages, msg]);
-      });
-
-      return () => {
-        socket.off('chat message');
-      };
     } else {
       navigate('/'); // Redirect if no user is authenticated
     }
+
+    socket.on('chat message', (msg) => {
+      setMessages((prevMessages) => [...prevMessages, msg]);
+    });
+
+    return () => {
+      socket.off('chat message');
+    };
   }, [navigate]);
 
   const handleSignOut = () => {
@@ -43,13 +42,14 @@ function Chat() {
   const handleSubmitMessage = (e) => {
     e.preventDefault();
     if (input.trim()) {
-      socket.emit('chat message', { username, text: input });
+      socket.emit('chat message', input);
       setInput('');
     }
   };
 
   return (
     <div className="chat">
+      <video src='/Videos/Main_page.mp4' autoPlay loop muted />
       <div id="banner">
         <span>{username}</span>
         <button onClick={handleSignOut} className="sign-out-button">Sign Out</button>
@@ -58,8 +58,8 @@ function Chat() {
         {messages.map((msg, index) => (
           <li key={index}>
             <div className={`message ${msg.username === username ? 'sent' : 'received'}`}>
-              <p><span className="username">{msg.username}</span></p>
-              <p>{msg.text}</p>
+              <p><span className="username">{username}</span></p>
+              <p>{msg}</p>
               <span className="timestamp"><small>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</small></span>
             </div>
           </li>
