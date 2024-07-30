@@ -1,14 +1,9 @@
-/* Container for the entire chat page */
+/* Container for the entire  chat page */
 .chat {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full height */
   overflow: hidden; /* Prevent scrolling of the main container */
-  background: linear-gradient(to bottom, #b58e8e, #000000); /* Gradient background */
-  /* Uncomment the next line and comment the gradient line to use an image instead */
-  /* background-image: url('/path/to/your/image.jpg'); */
-  background-size: cover; /* Cover the entire area */
-  background-position: center; /* Center the image */
 }
 
 
