@@ -52,7 +52,10 @@ io.on('connection', (socket) => {
     let encrypted = cipher.update(messageStr, 'utf8', 'base64');
     encrypted += cipher.final('base64');
 
-    // Decrypt the message to demonstrate the encryption process (for testing)
+    // Log the ciphertext to the console
+    console.log(`Message is encrypted. Ciphertext: ${encrypted}`);
+
+    // Decrypt the message
     let ss2 = kyber.Decrypt768(c, sk);
     const decipher = crypto.createDecipheriv('aes-256-cbc', ss2, iv);
     let decrypted = decipher.update(encrypted, 'base64', 'utf8');
