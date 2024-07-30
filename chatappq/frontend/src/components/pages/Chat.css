@@ -1,14 +1,12 @@
-/* Container for the entire chat page */
 .chat {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full height */
-  overflow: hidden; /* Prevent scrolling of the main container */
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Banner styling for username and sign-out button */
 #banner {
-  position: fixed; /* Fixed position to stay at the top */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -18,13 +16,12 @@
   font-weight: bold;
   font-size: 20px;
   color: white;
-  z-index: 10; /* Ensure it's on top of other content */
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Styling for the sign-out button */
 .sign-out-button {
   background: red;
   border: none;
@@ -38,16 +35,15 @@
   background: darkred;
 }
 
-/* Message container styling */
 #messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  padding-top: 60px; /* Add padding to account for the fixed banner */
-  padding-bottom: 3rem; /* Add padding to ensure the last message isn't covered by the input form */
-  flex: 1; /* Takes up remaining space */
-  overflow-y: auto; /* Scroll if messages overflow */
-  background-color: #f5f5f5; /* Light background for better readability */
+  padding-top: 60px;
+  padding-bottom: 3rem;
+  flex: 1;
+  overflow-y: auto; 
+  background-color: #f5f5f5;
 }
 
 /* Message styling */
@@ -55,11 +51,11 @@
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
-  max-width: 80%;
+  max-width: 60%;
 }
 
 .message.received {
-  background-color: #333333;
+  background: linear-gradient(to left, #265d61, #032a33);
   margin-left: 0.5rem;
   margin-right: auto;
   text-align: left;
@@ -67,7 +63,7 @@
 }
 
 .message.sent {
-  background-color: #72e7d9;
+  background: linear-gradient(to right, #0f8987, #8ed6c8);
   margin-right: 0.1rem;
   margin-left: auto;
   text-align: right;
@@ -78,7 +74,6 @@
   color: red;
 }
 
-/* Form container for input and button */
 #form {
   display: flex;
   align-items: center;
@@ -90,22 +85,20 @@
   right: 0;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
-  z-index: 10; /* Ensure it's on top of other content */
+  z-index: 10;
 }
 
-/* Input field styling */
 #input {
   border: none;
   padding: 0.5rem;
-  flex-grow: 1; /* Takes up available space */
+  flex-grow: 1;
   border-radius: 2rem;
-  margin-right: 0.5rem; /* Space between input and button */
+  margin-right: 0.5rem;
   font-size: 1rem;
 }
 
-/* Button styling */
 #form > button {
-  background: greenyellow;
+  background: rgb(60, 234, 208);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 3px;
