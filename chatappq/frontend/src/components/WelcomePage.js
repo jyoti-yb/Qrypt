@@ -13,6 +13,7 @@ function WelcomePage({ onSignIn }) {
     <div className="welcome-page">
       <div className="welcome-content">
         <h1>Welcome to the Chat App.</h1>
+        <h2>Sign in to start Chatting!</h2>
         <button onClick={onSignIn}>Sign in with Google</button>
       </div>
     </div>
