@@ -1,17 +1,11 @@
-<<<<<<< HEAD
+
 /* Container for the entire  chat page */
 .chat {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full height */
   overflow: hidden; /* Prevent scrolling of the main container */
-=======
-.chat {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
->>>>>>> f8990459218c0340d5e2b67732a6842ca8cadead
+
 }
 
 #banner {
