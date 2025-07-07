@@ -1,4 +1,4 @@
-
+## QRYPT
 **QRYPT** is a real-time, secure chat application built with React, Firebase, CRYSTALS-KYBER post-quantum encryption, Webpack, and Express. This application leverages advanced encryption methods to ensure data protection while providing a responsive and optimized user experience.
 
 ## FEATURES 
